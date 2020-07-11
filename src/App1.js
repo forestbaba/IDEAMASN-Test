@@ -50,7 +50,7 @@ const App1 = () => {
 
     let newDate = dateString.split('-')
 
-    let addData = await axios.get(`${BASE_URL}/components/game/mlb/year_${newDate[0]}/month_${newDate[1]}/day_${newDate[2]}/master_scoreboard.json`)
+    let addData = await axios.get(`https://baseline-cors.herokuapp.com/${BASE_URL}/components/game/mlb/year_${newDate[0]}/month_${newDate[1]}/day_${newDate[2]}/master_scoreboard.json`)
     setFetched(items => items.concat(addData.data.data.games.game))
 
 
