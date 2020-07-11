@@ -34,6 +34,7 @@ const App1 = () => {
 
       let addData = await axios.get(`${BASE_URL}/components/game/mlb/year_2015/month_07/day_25/master_scoreboard.json`)
 
+      setFetched([])
       returned = addData.data.data.games.game
       setFetched(items => items.concat(returned))
 
@@ -50,7 +51,9 @@ const App1 = () => {
 
     let newDate = dateString.split('-')
 
+    setFetched([])
     let addData = await axios.get(`${BASE_URL}/components/game/mlb/year_${newDate[0]}/month_${newDate[1]}/day_${newDate[2]}/master_scoreboard.json`)
+
     setFetched(items => items.concat(addData.data.data.games.game))
 
 
