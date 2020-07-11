@@ -24,18 +24,22 @@ const App1 = () => {
   useState(() => {
 
 
-    (async () => {
+    // (async () => {
 
+    //   try {
+        
+    //   } catch (error) {
+        
+    //   }
 
-      let addData = await axios.get(`${BASE_URL}/components/game/mlb/year_2015/month_07/day_25/master_scoreboard.json`)
+    //   let addData = await axios.get(`${BASE_URL}/components/game/mlb/year_2015/month_07/day_25/master_scoreboard.json`)
 
-      returned = addData.data.data.games.game
-      setFetched(items => items.concat(returned))
+    //   returned = addData.data.data.games.game
+    //   setFetched(items => items.concat(returned))
 
-      newFetched = returned.filter(i => favourite.includes(i.home_team_name))
-      // console.log('=====+44+========', returned.splice(returned.indexOf(newFetched[0])))
-      setFetched(items => items.concat(newFetched))
-    })()
+    //   newFetched = returned.filter(i => favourite.includes(i.home_team_name))
+    //   setFetched(items => items.concat(newFetched))
+    // })()
 
 
 
