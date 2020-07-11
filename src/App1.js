@@ -24,22 +24,22 @@ const App1 = () => {
   useState(() => {
 
 
-    // (async () => {
+    (async () => {
 
-    //   try {
+      try {
         
-    //   } catch (error) {
+      } catch (error) {
         
-    //   }
+      }
 
-    //   let addData = await axios.get(`${BASE_URL}/components/game/mlb/year_2015/month_07/day_25/master_scoreboard.json`)
+      let addData = await axios.get(`${BASE_URL}/components/game/mlb/year_2015/month_07/day_25/master_scoreboard.json`)
 
-    //   returned = addData.data.data.games.game
-    //   setFetched(items => items.concat(returned))
+      returned = addData.data.data.games.game
+      setFetched(items => items.concat(returned))
 
-    //   newFetched = returned.filter(i => favourite.includes(i.home_team_name))
-    //   setFetched(items => items.concat(newFetched))
-    // })()
+      newFetched = returned.filter(i => favourite.includes(i.home_team_name))
+      setFetched(items => items.concat(newFetched))
+    })()
 
 
 
@@ -50,7 +50,7 @@ const App1 = () => {
 
     let newDate = dateString.split('-')
 
-    let addData = await axios.get(`https://baseline-cors.herokuapp.com/${BASE_URL}/components/game/mlb/year_${newDate[0]}/month_${newDate[1]}/day_${newDate[2]}/master_scoreboard.json`)
+    let addData = await axios.get(`${BASE_URL}/components/game/mlb/year_${newDate[0]}/month_${newDate[1]}/day_${newDate[2]}/master_scoreboard.json`)
     setFetched(items => items.concat(addData.data.data.games.game))
 
 
